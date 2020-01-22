@@ -1,0 +1,16 @@
+<mat-toolbar class="d-flex justify-content-between">
+  <div class="d-flex justify-content-start">
+    <button mat-icon-button class="mr-3" (click)="toggler()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="d-flex align-items-center">Admin</h1>
+  </div>
+  <mat-card-content [matMenuTriggerFor]="belowMenu" class="d-flex justify-content-end cursor-pointer pointer m-0 p-0">
+    <div class="avatar-image m-0 p-0" mat-card-avatar></div>
+    <mat-card-subtitle class="m-0 p-0">{{user?.firstName + ' ' + user?.lastName}}</mat-card-subtitle>
+  </mat-card-content>
+</mat-toolbar>
+<mat-menu #belowMenu yPosition="below">
+  <a mat-menu-item [routerLink]="'/profile'" style="color: black">Profile</a>
+  <button mat-menu-item (click)="openDialog()">Log out</button>
+</mat-menu>

@@ -1,0 +1,24 @@
+.profile-card {
+  width: 40%;
+  margin: 20px auto;
+}
+
+.align {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .profile-card {
+    width: 70%;
+  }
+}
+
+.color {
+  background-color: #ebeff5;
+}

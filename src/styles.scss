@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #ebeff5;
+}
+
+.full-height {
+  height: 100%;
+}
+
+button {
+  // We don't want to display outline for buttons
+  outline: 0 !important;
+}
+
+a {
+  color: #000;
+
+  &:hover{
+    text-decoration: none;
+  }
+}

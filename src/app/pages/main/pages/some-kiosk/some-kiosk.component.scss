@@ -1,0 +1,22 @@
+:host {
+  height: 100%;
+  display: block;
+}
+
+.widthImg {
+  width: 200px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    flex-flow: column;
+  }
+}
+.title-size {
+  font-size: 15px;
+  text-align: center;
+}

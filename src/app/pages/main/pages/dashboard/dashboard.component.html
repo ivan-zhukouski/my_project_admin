@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="p-3 text-center">Kiosks</h2>
+  <div class="row d-flex justify-content-center flex-wrap full-height col-lg-12 col-md-12 col-sm-12 p-0 m-0">
+    <mat-card *ngFor="let item of kiosks" (click)="goToKiosk(item.id)" class="pointer m-3 col-lg-3 col-md-3 col-sm-6 col-8 ">
+      <img mat-card-image [src]="item.imageURL"/>
+      <mat-card-content>
+        <div>
+          Address: {{item.address.en}}<br>
+        </div>
+        <div>
+          Hours: {{item.hours.from}}:00 - {{item.hours.to}}:00
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
