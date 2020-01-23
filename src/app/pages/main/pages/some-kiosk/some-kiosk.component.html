@@ -14,27 +14,8 @@
         <div class="d-flex col-lg-12 col-md-12 m-0 p-0">
           <mat-form-field class="col-lg-8 col-md-8" style="margin: 0">
             <mat-label>From</mat-label>
-            <mat-select value="{{kiosk.hours.from}}">
-              <mat-option value="0">0</mat-option>
-              <mat-option value="1">1</mat-option>
-              <mat-option value="2">2</mat-option>
-              <mat-option value="3">3</mat-option>
-              <mat-option value="4">4</mat-option>
-              <mat-option value="5">5</mat-option>
-              <mat-option value="6">6</mat-option>
-              <mat-option value="7">7</mat-option>
-              <mat-option value="8">8</mat-option>
-              <mat-option value="9">9</mat-option>
-              <mat-option value="10">10</mat-option>
-              <mat-option value="11">11</mat-option>
-              <mat-option value="12">12</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="col-lg-4 col-md-4 col-sm-4 col-4">
-            <mat-label>am/pm</mat-label>
-            <mat-select value="am">
-              <mat-option value="am">am</mat-option>
-              <mat-option value="pm">pm</mat-option>
+            <mat-select  value="{{kiosk.hours.from}}">
+              <mat-option *ngFor="let hour of hours" [value]="hour.title">{{hour.title}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -42,27 +23,7 @@
           <mat-form-field class="col-lg-8 col-md-8" style="margin: 0">
             <mat-label>To</mat-label>
             <mat-select value="{{kiosk.hours.to}}">
-              <mat-option value="0">0</mat-option>
-              <mat-option value="1">1</mat-option>
-              <mat-option value="2">2</mat-option>
-              <mat-option value="3">3</mat-option>
-              <mat-option value="4">4</mat-option>
-              <mat-option value="5">5</mat-option>
-              <mat-option value="6">6</mat-option>
-              <mat-option value="7">7</mat-option>
-              <mat-option value="8">8</mat-option>
-              <mat-option value="9">9</mat-option>
-              <mat-option value="10">10</mat-option>
-              <mat-option value="11">11</mat-option>
-              <mat-option value="12">12</mat-option>
-              <mat-option value="24">24</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="col-lg-4 col-md-4 col-sm-4 col-4">
-            <mat-label>am/pm</mat-label>
-            <mat-select value="pm">
-              <mat-option value="am">am</mat-option>
-              <mat-option value="pm">pm</mat-option>
+              <mat-option *ngFor="let hour of hours" [value]="hour.title">{{hour.title}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
