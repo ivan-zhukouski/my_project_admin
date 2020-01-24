@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { NewDialogComponent } from './new-dialog/new-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NewDialogComponent } from './new-dialog/new-dialog.component';
     CommonModule,
     DragDropModule,
     CategoriesRoutingModule,
+    FormsModule,
 
     MatButtonModule,
     MatDialogModule,

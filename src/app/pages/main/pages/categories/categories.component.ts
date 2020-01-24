@@ -32,12 +32,18 @@ export class CategoriesComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-  openEditDialog() {
+  openEditDialog(category) {
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '250px'
+      width: '250px',
+      data: {name: category.title}
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Cancel`);
+      if (result === undefined) {
+        return false;
+      } else {
+        category.title = result;
+      }
     });
   }
   openNewDialog() {

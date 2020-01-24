@@ -1,12 +1,12 @@
 <mat-dialog-content>
   <p class="text-center">Update Product Category</p>
   <mat-form-field class=" m-3">
-    <input matInput placeholder="Title" autocomplete="off">
+    <input matInput placeholder="Title" [(ngModel)]="data.name" value="{{data.name}}" autocomplete="off">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+  <button mat-button (click)="cancelClick()">Cancel</button>
+  <button mat-button (click)="updateClick()" [mat-dialog-close]="data.name" cdkFocusInitial>
     Update
   </button>
 </mat-dialog-actions>

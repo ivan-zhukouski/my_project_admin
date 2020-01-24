@@ -5,10 +5,10 @@
   </div>
   <div class=" row d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 p-0 m-0 ">
     <div cdkDropList class="categories-list col-lg-4 col-md-4 col-sm-6 col-8 p-0" (cdkDropListDropped)="drop($event)">
-      <div class="category-box text-center d-flex justify-content-between" *ngFor="let movie of categories" cdkDrag>
-        <h5 class="d-flex align-items-center m-0">{{movie.title}}</h5>
+      <div class="category-box text-center d-flex justify-content-between" *ngFor="let category of categories" cdkDrag>
+        <h5 class="d-flex align-items-center m-0">{{category.title}}</h5>
         <div class="d-flex align-content-center align-items-center">
-          <mat-icon class="m-1 pointer" (click)="openEditDialog()" >edit</mat-icon>
+          <mat-icon class="m-1 pointer" (click)="openEditDialog(category)" >edit</mat-icon>
           <mat-icon class="m-1 pointer" (click)="openDeleteDialog()" >delete</mat-icon>
         </div>
       </div>
