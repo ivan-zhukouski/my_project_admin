@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Token } from '../models/token.model';
@@ -13,10 +13,13 @@ import { CategoriesModel } from '@core/models/categories.model';
 
 const apiBase = `${environment.apiUrl}api-admin/v1/`;
 const apiKiosks = `${environment.apiUrl}api/v1/kiosks/`;
-const apiCategories = `${environment.apiUrl}api-admin/v1/product-categories`;
+const apiCategories = `${environment.apiUrl}api-admin/v1/product-categories/`;
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   private urls = {
     auth: `${apiBase}auth/login`,
     profile: `${apiBase}users/profile`,
@@ -52,6 +55,12 @@ export class ApiService {
   }
   public  getCategories(): Observable<CategoriesModel[]> {
     return this.http.get<CategoriesModel[]>(this.urls.categories);
+  }
+  public deleteCategory(id: CategoriesModel | string): Observable<CategoriesModel[]> {
+    return this.http.delete<CategoriesModel[]>(this.urls.categories + id);
+  }
+  public addCategory(category: CategoriesModel | string): Observable<CategoriesModel> {
+    return this.http.post<CategoriesModel>(this.urls.categories, category, this.httpOptions);
   }
   public signIn(credentials): Observable<Token> {
     return this.http.post<Token>(this.urls.auth, credentials);

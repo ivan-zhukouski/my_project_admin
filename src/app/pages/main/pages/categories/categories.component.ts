@@ -22,11 +22,18 @@ export class CategoriesComponent implements OnInit {
     moveItemInArray(this.categories, event.previousIndex, event.currentIndex);
   }
   ngOnInit() {
-    this.apiService.getCategories().subscribe((data: CategoriesModel[]) => this.categories = data);
+    this.getCategories();
   }
-  openDeleteDialog() {
+  getCategories(): void {
+    this.apiService.getCategories().subscribe((categories: CategoriesModel[]) => this.categories = categories);
+  }
+  delete(categoryObj) {
+    this.apiService.deleteCategory(categoryObj.id).subscribe();
+  }
+  openDeleteDialog(categoryObj) {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      width: '250px'
+      width: '250px',
+      data: {id: categoryObj.id}
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
