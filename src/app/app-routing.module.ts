@@ -7,11 +7,11 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [IsLoggedinGuard],
-    loadChildren: './pages/main/main.module#MainModule'
+    loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule)
   },
   {
     path: 'login',
-    loadChildren: './pages/login/login.module#LoginModule'
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   },
 ];
 
